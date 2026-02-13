@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: trade-signal-monitor
+    env: docker
+    plan: free
+    autoDeploy: true
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 3000

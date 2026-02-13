@@ -1,0 +1,22 @@
+{
+  "name": "trade-signal-monitor",
+  "version": "1.0.0",
+  "description": "MVP for monitoring impactful disclosed congress trades",
+  "main": "server/src/index.js",
+  "type": "commonjs",
+  "scripts": {
+    "dev": "nodemon server/src/index.js",
+    "start": "node server/src/index.js",
+    "ingest": "node server/src/cli/ingest.js",
+    "test": "node --test",
+    "package:share": "git archive --format=zip --output trade-signal-monitor.zip HEAD"
+  },
+  "dependencies": {
+    "better-sqlite3": "^11.7.0",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  }
+}

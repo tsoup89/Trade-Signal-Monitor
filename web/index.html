@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Trade Signal Monitor</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>Trade Signal Monitor</h1>
+    <p>Informational dashboard for disclosed U.S. Congress trades and 13F holdings.</p>
+  </header>
+
+  <section class="filters">
+    <select id="range"><option value="7">Last 7 days</option><option value="30" selected>Last 30 days</option><option value="90">Last 90 days</option><option value="custom">Custom</option></select>
+    <input type="date" id="fromDate" />
+    <input type="date" id="toDate" />
+    <select id="type"><option value="">All types</option><option value="BUY">BUY</option><option value="SELL">SELL</option></select>
+    <input type="text" id="entity" placeholder="Entity name" list="entityList" />
+    <datalist id="entityList"></datalist>
+    <input type="text" id="ticker" placeholder="Ticker" />
+    <select id="source_type"><option value="">All sources</option><option value="CONGRESS">Congress</option><option value="13F">13F Holdings</option></select>
+    <button id="apply">Apply</button>
+    <button id="csv">Download CSV</button>
+    <a id="printLink" target="_blank">Print View</a>
+  </section>
+
+  <section class="grid">
+    <div class="card">
+      <h2>Top Tickers</h2>
+      <ul id="topTickers"></ul>
+      <h3>Lag Distribution</h3>
+      <ul id="lagWidget"></ul>
+    </div>
+    <div class="card table-card">
+      <h2>Top Impact Trades</h2>
+      <table id="tradesTable">
+        <thead><tr>
+          <th data-sort="impact_score">Impact</th><th data-sort="disclosed_date">Disclosed</th><th data-sort="entity_name">Entity</th><th data-sort="ticker">Ticker</th><th>Watch</th><th>Source</th><th>Type</th><th data-sort="amount_max">Amount</th><th data-sort="disclosure_lag_days">Lag</th><th>Rxn1D</th><th>Rxn5D</th><th>vs SPY 1D</th><th>vs SPY 5D</th>
+        </tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="grid section-gap">
+    <div class="card" id="watchlistCard">
+      <h2>Watchlists</h2>
+      <input id="watchlistName" placeholder="Watchlist name" /> <button id="createWatchlist">Create</button>
+      <ul id="watchlists"></ul>
+    </div>
+    <div class="card" id="alertsCard">
+      <h2>Alerts</h2>
+      <select id="alertChannel"><option>WEBHOOK</option><option>EMAIL</option></select>
+      <input id="alertTarget" placeholder="Webhook URL / email" />
+      <input id="alertMinImpact" type="number" step="0.1" value="0" />
+      <button id="createAlert">Add Alert</button>
+      <button id="sendTestAlert">Send Test</button>
+      <ul id="alertsList"></ul>
+    </div>
+  </section>
+
+  <footer><small>Not investment advice. For informational purposes only.</small></footer>
+  <script src="config.js"></script>
+  <script src="api.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
