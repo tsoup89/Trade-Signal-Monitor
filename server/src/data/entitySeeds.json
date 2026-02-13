@@ -1,0 +1,23 @@
+[
+  {
+    "canonical_name": "Nancy Pelosi",
+    "entity_type": "PERSON",
+    "role": "House",
+    "aliases": ["Pelosi, Nancy", "Rep. Nancy Pelosi", "Nancy D'Alesandro Pelosi"],
+    "default_weight": 1.4
+  },
+  {
+    "canonical_name": "Dan Crenshaw",
+    "entity_type": "PERSON",
+    "role": "House",
+    "aliases": ["Crenshaw, Dan", "Rep. Dan Crenshaw"],
+    "default_weight": 1.2
+  },
+  {
+    "canonical_name": "Berkshire Hathaway Inc",
+    "entity_type": "ORGANIZATION",
+    "role": null,
+    "aliases": ["Berkshire Hathaway", "BRK"],
+    "default_weight": 1.3
+  }
+]

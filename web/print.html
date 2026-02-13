@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Print View - Trade Signal Monitor</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="print">
+  <h1>Trade Signal Monitor - Print View</h1>
+  <p id="filters"></p>
+  <table>
+    <thead>
+      <tr><th>Impact</th><th>Disclosed</th><th>Entity</th><th>Ticker</th><th>Type</th><th>Amount</th></tr>
+    </thead>
+    <tbody id="printRows"></tbody>
+  </table>
+  <script src="config.js"></script>
+  <script src="api.js"></script>
+  <script src="print.js"></script>
+</body>
+</html>
